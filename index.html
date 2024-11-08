@@ -28,22 +28,25 @@
 				<video class="video_inicio" src="https://videos.pexels.com/video-files/7012967/7012967-hd_1080_1350_25fps.mp4" alt="video_fabricación" controls autoplay loop muted preload></video>
 			</section>
 			<!-- Formularios -->
-			<form action="" method="POST">
-                <p>Póngase en contacto con nosotros:</p>
-                <label for="nombre">Nombre:
-                    <input id="nombre" name="nombre" type="text" placeholder="Escriba su nombre..."/>
-                </label>
-                <label for="apellido">:
-                    <input id="apellido" name="apellido" type="text" placeholder="Escriba su apellido..."/>
-                </label>
-                <label for="email">E-mail:
-                    <input id="email" name="email" type="email" placeholder="Escriba su e-mail..."/>
-                </label>
-                <label for="comentario">Envíenos sus comentarios:
-                    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Ingrese sus comentarios..."></textarea>
-                </label>
-                <!--Botón de envío-->
-                <input type="submit" value="Enviar Datos">
+			<form action="" method="POST" target="_blank" >
+				<fieldset>
+					<legend>Póngase en contacto con nosotros:</legend>
+					<label for="nombre">Nombre:
+						<input id="nombre" name="nombre" type="text" placeholder="Escriba su nombre..."/>
+					</label>
+					<label for="apellido">:
+						<input id="apellido" name="apellido" type="text" placeholder="Escriba su apellido..."/>
+					</label>
+					<label for="email">E-mail:
+						<input id="email" name="email" type="email" placeholder="Escriba su e-mail..."/>
+					</label>
+					<label for="comentario">Envíenos sus comentarios:
+						<textarea name="comentario" id="comentario" cols="30" rows="10" maxlength="150" placeholder="Ingrese sus comentarios (hasta 150 caracteres)..."></textarea>
+					</label>
+					<!--Botones de envío y borrado-->
+					<input type="submit" value="Enviar">
+					<input type="reset" value="Borrar">
+				</fieldset>
 			</form>
 		</main>
 		<footer>
