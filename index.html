@@ -24,8 +24,12 @@
 		<main>
 			<section>
 				<p>¿Productos?</p>
-				<img src="img/producto01.jpg" class="img_producto" alt="producto01">
-				<video class="video_inicio" src="https://videos.pexels.com/video-files/7012967/7012967-hd_1080_1350_25fps.mp4" alt="video_fabricación" controls autoplay loop muted preload></video>
+				<img src="img/producto01.jpg" class="img_producto" alt="imagen_producto">
+				<video class="video_inicio" poster="preview.jpg" alt="video_fabricación" controls autoplay loop muted preload>
+					<source src="https://videos.pexels.com/video-files/7012967/7012967-hd_1080_1350_25fps.mp4" type="video/mp4">
+					<track src="sub/subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
+					Tu navegador no soporta la reproducción de video.
+				</video>
 			</section>
 			<!-- Formularios -->
 			<form action="" method="POST" target="_blank" >
@@ -40,13 +44,14 @@
 					<label for="email">E-mail:
 						<input id="email" name="email" type="email" placeholder="Escriba su e-mail..."/>
 					</label>
-					<label for="comentario">Envíenos sus comentarios:
-						<textarea name="comentario" id="comentario" cols="30" rows="10" maxlength="150" placeholder="Ingrese sus comentarios (hasta 150 caracteres)..."></textarea>
-					</label>
-					<!--Botones de envío y borrado-->
-					<input type="submit" value="Enviar">
-					<input type="reset" value="Borrar">
 				</fieldset>
+				<fieldset>
+					<legend>Envíenos sus comentarios:</legend>
+					<textarea name="comentario" id="comentario" cols="30" rows="10" maxlength="150" placeholder="Ingrese sus comentarios (hasta 150 caracteres)..."></textarea>
+				</fieldset>
+				<!--Botones de envío y borrado-->
+				<input type="submit" value="Enviar">
+				<input type="reset" value="Borrar">
 			</form>
 		</main>
 		<footer>
