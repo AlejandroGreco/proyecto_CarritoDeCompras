@@ -22,10 +22,18 @@
 * Estilos de Uso General *
 *************************/
 
+/* ¡BORRAR! */
 * {
+	/*border: black solid 1px;
+	/*font-family: var(--playfair-display);*/
+}
+
+body {
+	background-color: var(--color-fondo);
+	color: var(--color-principal);
 	font-family: var(--playfair-display);
 	font-weight: bold;
-	font-style: normal;
+	font-style: normal;	
 }
 
 /* Clases de uso general para las secciones principales y sus subsecciones */
@@ -34,21 +42,24 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 20px;
+	max-width: 1000px;
+	margin: 20px auto;
+	padding: 0 20px;
 	text-align: center;
 }
 
 .subseccion {
-	margin: 10px;
+	margin: 0 10px;
+	width: 100%;
 }
 
 /* Clase para dar aspecto estilizado tanto al <nav> como al <footer> */
 .cinta {
 	background-color: var(--color-principal);
 	color: var(--color-fondo);
-	width: 100%;
 	padding: 15px;
 	margin: 5px;
+	width: 100%;
 }
 
 /* Damos un estilo moderno a los enlaces de la clase .cinta*/
@@ -84,14 +95,6 @@
 	background-color: var(--color-atenuado);
 }
 
-/*****************
-* Estilos Cuerpo *
-*****************/
-body {
-	background-color: var(--color-fondo);
-	color: var(--color-principal);
-}
-
 /*************************
 * Estilos Sección Header *
 *************************/
@@ -104,31 +107,20 @@ nav {
 	height: 40px;
 }
 
-/* Acomodamos el tamaño del logo al alto del contenido del <nav> */
+/* Le damos el mismo tamaño del contenido del <nav> al alto del logo, si bien flex los va a adaptar  */
 #logo-nav {
 	height: 40px;
 }
 
 /* Damos un estilo moderno a la lista de enlaces de navegación y usamos flex para distribuirlos */
 .lista-nav {
-	/*
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: space-evenly;
-	*/
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	font-size: 1.25rem;
-	/*gap: 2.1rem;*/
 	flex: 1; /* Para que ocupe el ancho restante del contenedor padre */
-}
-
-/* ¿Agregamos margenes a derecha e izquierda de los ítems de la lista de navegación? */
-.lista-nav li {
 }
 
 /* Título de la Marca */
@@ -137,45 +129,112 @@ nav {
 	font-weight: bold;
 	font-style: normal;
 	font-size: 3.5rem;
+	margin: 20px auto 0;
 }
 
 /***********************
 * Estilos Sección Main *
 ***********************/
 
-#parrafo-bienvenida {
-	max-width: 800px;
-}
-
 .titulo-secundario {
 	font-family: var(--cookie-regular);
 	font-weight: bold;
 	font-style: normal;
 	font-size: 2.5rem;
+	margin: 0 auto 10px;
 }
 
-.tarjeta-producto,
-.tarjeta-resena {
-	border: var(--color-principal) solid 3px;
-	border-radius: 10px;
+.subseccion {
+
 }
+
+.subseccion:not(#seccion-inicio) {
+	margin-top: 100px;
+}
+
+/* Contenedor de Tarjetas de Productos*/
+.tarjetas-productos {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	padding: 1rem;
+	gap: 1rem;
+}
+
+.tarjetas-resenas {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 1rem;
+	gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .tarjetas-productos {
+		grid-template-columns: repeat(2, 1fr);
+    }
+	.tarjetas-resenas {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+
+/* Clase para aplicar estilos comunes a las tarjetas */
+.tarjeta-general {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 10px;
+	padding: 1rem;
+	color: var(--color-fondo);
+}
+
+/* Clase para estilo de tarjetas de productos */
+.tarjeta-producto {
+	background: linear-gradient(var(--color-atenuado), var(--color-resaltado), var(--color-secundario), var(--color-principal));
+	flex-direction: column;
+}
+
+/* Clase para estilo de tarjetas de reseñas */
+.tarjeta-resena {
+	background: linear-gradient(90deg, var(--color-atenuado), var(--color-resaltado), var(--color-secundario), var(--color-principal));
+	flex-direction: row;
+}
+
+/* Enlace de las Tarjetas  */
+.tarjeta-general a {
+	text-decoration: none;
+	color: var(--color-fondo);
+}
+
+.tarjeta-general a:hover {
+	color: var(--color-resaltado);
+}
+
+.tarjeta-general a:active {
+	color: var(--color-secundario);
+}
+
 
 /*************************************************************
 * Las siguientes dos clases son contenedores para limitar el *
 * tamaño de las imágenes y "recortarlas" sin deformación     *
 *************************************************************/
 
-/* Clase contenedores images de producto */
+/* Clase contenedora de imágenes de productos */
 .contenedor-img-producto {
-    width: 300px;
-    height: 200px;
+    border-radius: 10px;
+	margin: 0 auto;
+	max-width: 300px;
+    max-height: 200px;
     overflow: hidden; /* Esconde los excedentes de la imagen */
 }
 
-/* Clase contenedores images de reseña */
+/* Clase contenedora de imágenes de reseñas */
 .contenedor-img-resena {
-    width:  200px;
-    height: 300px;
+	border-radius: 10px;
+	margin: auto 0;
+    max-width:  200px;
+    max-height: 300px;
     overflow: hidden; /* Esconde los excedentes de la imagen */
 }
 
@@ -189,9 +248,17 @@ nav {
 
 /* Estilos video */
 
-#video-inicio {
-	width: 200px;
+/* Vamos a dar al video un estilo similar al de las imágenes de las reseñas */
+.contenedor-video{
+	margin: auto 0;
+    max-width:  200px;
+    max-height: 300px;
+    overflow: hidden;
 }
 
-
-
+/* Ajustamos el video para que cubran todo el espacio disponible */
+#video-inicio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
